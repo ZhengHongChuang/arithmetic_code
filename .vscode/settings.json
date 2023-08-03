@@ -60,7 +60,8 @@
       "xutility": "cpp",
       "stdlib.h": "c",
       "string.h": "c",
-      "uthash.h": "c"
+      "uthash.h": "c",
+      "limits.h": "c"
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "aiXcoder.showTrayIcon": true
