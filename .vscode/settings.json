@@ -62,7 +62,8 @@
       "string.h": "c",
       "uthash.h": "c",
       "limits.h": "c",
-      "stdbool.h": "c"
+      "stdbool.h": "c",
+      "string_view": "c"
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "aiXcoder.showTrayIcon": true
