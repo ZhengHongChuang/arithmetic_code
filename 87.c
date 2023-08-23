@@ -80,4 +80,3 @@ bool isScramble(char *s1, char *s2) {
     // 返回整个字符串的判断结果
     return dp[0][0][len];
 }
-}
