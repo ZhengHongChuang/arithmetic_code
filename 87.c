@@ -4,7 +4,7 @@
  * @Author: zhc
  * @Date: 2023-08-22 18:09:43
  * @LastEditors: zhc
- * @LastEditTime: 2023-08-24 00:03:23
+ * @LastEditTime: 2023-08-24 00:17:14
  */
 
 /*
@@ -59,7 +59,7 @@ bool isScramble(char *s1, char *s2) {
     // 初始化单个字符的情况
     for (int i = 0; i < len; i++) {
         for (int j = 0; j < len; j++) {
-            dp[i][j][1] = s1[i] == s2[j];  // 初始化长度为 1 的子串
+            dp[i][j][1] = s1[i] == s2[j];  // 初始化长度为 1 的子串情况，判断对应字符是否相等
         }
     }
     
@@ -70,7 +70,9 @@ bool isScramble(char *s1, char *s2) {
                 dp[i][j][k] = false;  // 初始化当前长度的子串为 false
                 for (int m = 1; m < k && !dp[i][j][k]; m++) {
                     // 尝试不同的分割点 m，判断两种情况是否满足扰乱字符串条件
-                    dp[i][j][k] = (dp[i][j][m] && dp[i + m][j + m][k - m]) || 
+                    // 第一种情况：保持 s2 中 y 部分的顺序，判断 x 和 y 是否满足扰乱字符串条件
+                    // 第二种情况：保持 s1 和 s2 的顺序，判断 x 和 y 是否满足扰乱字符串条件
+                    dp[i][j][k] = (dp[i][j][m] && dp[i + m][j + m][k - m]) ||
                                   (dp[i][j + k - m][m] && dp[i + m][j][k - m]);
                 }
             }
@@ -80,3 +82,4 @@ bool isScramble(char *s1, char *s2) {
     // 返回整个字符串的判断结果
     return dp[0][0][len];
 }
+
