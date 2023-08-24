@@ -4,7 +4,7 @@
  * @Author: zhc
  * @Date: 2023-08-24 00:07:32
  * @LastEditors: zhc
- * @LastEditTime: 2023-08-24 00:07:37
+ * @LastEditTime: 2023-08-24 14:14:46
  */
 
 /*
@@ -40,6 +40,20 @@
 输出：0
 解释："06" 无法映射到 "F" ，因为存在前导零（"6" 和 "06" 并不等价）。
 */
+#include<string.h>
 int numDecodings(char * s){
-    
+    int len = strlen(s);
+    int dp[len+1];
+    memset(dp,0,sizeof(int)*(len+1));
+    dp[0] = 1;
+    for (int i = 1; i <= len; i++)
+    {
+        if(s[i-1]!='0'){
+            dp[i] += dp[i-1];
+        }
+        if(i>1 && s[i-2]!='0'&& ((s[i-2]-'0')*10+(s[i-1]-'0')<=26)){
+            dp[i] += dp[i-2];
+        }
+    }
+    return dp[len];  
 }
