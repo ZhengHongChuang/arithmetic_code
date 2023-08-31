@@ -41,7 +41,6 @@ int** generate(int numRows, int* returnSize, int** returnColumnSizes){
             }else{
                 res[i][i-j] = res[i][j] = res[i-1][j-1] + res[i-1][j]; 
             }
-            
         }
     }
     return res;
