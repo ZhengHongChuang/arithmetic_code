@@ -32,15 +32,11 @@
 int max(int a, int b) {
     return a > b ? a : b;
 }
-
 int maxProfit(int k, int* prices, int pricesSize) {
     if (k <= 0 || pricesSize <= 1) {
         return 0;
     }
-
     int* dp = (int*)malloc(sizeof(int) * (2 * k));
-    
-
     for (int i = 0; i < 2 * k; i++) {
         if (i % 2 == 0) {
             dp[i] = -prices[0];
@@ -48,7 +44,6 @@ int maxProfit(int k, int* prices, int pricesSize) {
             dp[i] = 0;
         }
     }
-
     for (int i = 1; i < pricesSize; i++) {
         for (int j = 0; j < 2 * k; j++) {
             if (j % 2 == 0) {
@@ -58,7 +53,6 @@ int maxProfit(int k, int* prices, int pricesSize) {
             }
         }
     }
-
     int maxProfit = dp[2 * k - 1];
     free(dp);
     return maxProfit;
