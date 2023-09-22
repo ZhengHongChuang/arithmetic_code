@@ -63,8 +63,11 @@
       "uthash.h": "c",
       "limits.h": "c",
       "stdbool.h": "c",
-      "string_view": "c"
+      "string_view": "c",
+      "array": "c",
+      "optional": "c"
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "aiXcoder.showTrayIcon": true
+    "aiXcoder.showTrayIcon": true,
+    "C_Cpp.errorSquiggles": "enabled"
   }

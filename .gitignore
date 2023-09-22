@@ -3,3 +3,4 @@
 *.json
 *.gitgnore
 *.xml
+.vscode/settings.json
