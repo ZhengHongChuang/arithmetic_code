@@ -86,7 +86,7 @@ void clearHashTable(hashTable **table)
 int *findSubstring(char *s, char **words, int wordsSize, int *returnSize)
 {
     int m = wordsSize, n = strlen(words[0]), ls = strlen(s);
-    int *res = (int *)malloc(sizeof(int) * (ls - m * n));
+    int *res = (int *)malloc(sizeof(int) * ((ls - m * n)+1));
     char word[32] = {0};
     int pos = 0;
     int vaild = 0;
