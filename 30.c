@@ -7,15 +7,6 @@
  * @LastEditTime: 2024-02-06 14:33:10
  */
 /*
- * @Descripttion: Leetcode_code
- * @version: 1.0
- * @Author: zhc
- * @Date: 2024-02-02 20:08:00
- * @LastEditors: zhc
- * @LastEditTime: 2024-02-02 20:08:06
- */
-
-/*
 给定一个字符串 s 和一个字符串数组 words。 words 中所有字符串 长度相同。
 
  s 中的 串联子串 是指一个包含  words 中所有字符串以任意顺序排列连接起来的子串。
