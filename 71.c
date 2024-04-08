@@ -44,6 +44,7 @@
 */
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 char ** split(const char * s, char delim, int * returnSize) {
     int n = strlen(s);
     char ** ans = (char **)malloc(sizeof(char *) * n);
