@@ -4,7 +4,7 @@
  * @Author: zhc
  * @Date: 2024-04-11 19:25:12
  * @LastEditors: zhc
- * @LastEditTime: 2024-04-11 21:44:01
+ * @LastEditTime: 2024-04-11 21:58:10
  */
 /*
 给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
@@ -35,31 +35,20 @@ int largestRectangleArea(int* heights, int heightsSize) {
     int res = 0;
     for(int i=0;i<heightsSize;i++)
     {
-        while(top!=-1 && heights[stack[top]]>=heights[i])
-        {
+        while(top != -1 && heights[i] <= heights[stack[top]]){
             int h = heights[stack[top]];
-            top--;
-            int w = top==-1?i:i-stack[top]-1;
-            res = res>h*w?res:h*w;
+            top --;
+            int w = top == -1 ? i:i-stack[top]-1;
+            res = res > h*w ?res:h*w;
         }
         stack[++top] = i;
     }
-    while(top!=-1)
-    {
+    while(top != -1){
         int h = heights[stack[top]];
-        top--;
-        int w = top==-1?heightsSize:heightsSize-stack[top]-1;
-        // printf("%d\n",h*w);
-        res = res>h*w?res:h*w;
+        top --;
+        int w = top == -1?heightsSize:heightsSize-stack[top] - 1;
+        res = res > h*w ?res:h*w;
     }
     return res;
     
-}
-int main()
-{
-    int heights[] = {2,1,5,6,2,3};
-    int heightsSize = 6;
-    largestRectangleArea(heights,heightsSize);
-    // printf("%d\n",largestRectangleArea(heights,heightsSize));
-    return 0;
 }
