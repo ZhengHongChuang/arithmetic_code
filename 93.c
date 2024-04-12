@@ -4,7 +4,7 @@
  * @Author: zhc
  * @Date: 2024-04-12 20:13:16
  * @LastEditors: zhc
- * @LastEditTime: 2024-04-12 20:57:38
+ * @LastEditTime: 2024-04-12 20:58:48
  */
 /*
  有效 IP 地址 正好由四个整数（每个整数位于 0 到 255 之间组成，且不能含有前导 0），整数之间用 '.' 分隔。
@@ -55,7 +55,6 @@ void backtrack(char *s, int start, int part, char *ip, char **result, int *retur
             ip[ip_len] = '\0';  
         }
 
-        if (num == 0 && len > 1) break;  
     }
 }
 
