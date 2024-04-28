@@ -65,7 +65,8 @@
       "stdbool.h": "c",
       "string_view": "c",
       "array": "c",
-      "optional": "c"
+      "optional": "c",
+      "ctype.h": "c"
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "aiXcoder.showTrayIcon": true,
